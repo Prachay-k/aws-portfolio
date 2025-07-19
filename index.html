@@ -9,13 +9,61 @@
     html {
       scroll-behavior: smooth;
     }
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      z-index: 2000;
+    }
+    .profile-pic {
+      display: block;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 20px auto;
+      border: 6px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      .nav-container {
+        position: relative;
+      }
+      .nav-bar {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      }
+      .nav-bar a {
+        padding: 15px;
+        border-top: 1px solid #eee;
+        text-align: center;
+      }
+      .nav-bar.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container nav-container">
       <h1>☁️ Prachay Khatu</h1>
       <p>Cloud Computing Enthusiast | AWS Beginner</p>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </div>
   </header>
 
@@ -30,6 +78,7 @@
 
   <section id="about" class="section">
     <h2>👋 About Me</h2>
+    <img src="assets\IMG_1991-1.jpg" alt="Prachay Khatu" class="profile-pic">
     <p>
       I am a final-year Computer Engineering student passionate about cloud computing and AWS. I specialize in designing scalable web applications and cloud-based architectures using services like EC2, S3, Lambda, and IAM.
     </p>
@@ -74,7 +123,7 @@
     </div>
 
     <div class="card">
-      <h3>📸 PhotoGram(Instagram Lite)</h3>
+      <h3>📸 PhotoGram (Instagram Lite)</h3>
       <p>
         A cloud-native Flutter app for photographers to share and find images using facial recognition. Features Supabase Authentication, AWS S3 storage, and facial recognition API integration.
       </p>
@@ -84,18 +133,6 @@
         <li>Future plan: Add AI-based tagging and search</li>
       </ul>
     </div>
-
-    <!--<div class="card">
-      <h3>🛒 Custom Clothing E-commerce Site</h3>
-      <p>
-        A full-stack platform for printing personalized clothing, built using the MERN stack. Integrates Cloudinary for image uploads and Stripe for secure payments.
-      </p>
-      <ul>
-        <li>Dynamic design editor to upload artwork</li>
-        <li>Admin dashboard for inventory and orders</li>
-        <li>Deployed on Render with MongoDB Atlas backend</li>
-      </ul>
-    </div>-->
   </section>
 
   <section id="certificates" class="section">
@@ -107,11 +144,10 @@
   </section>
 
   <section id="resume" class="section">
-  <h2>📄 Resume</h2>
-  <p>You can download my resume below:</p>
-  <a href="assets\Prachay_Resume.pdf" class="btn" download>⬇️ Download Resume</a>
-</section>
-
+    <h2>📄 Resume</h2>
+    <p>You can download my resume below:</p>
+    <a href="assets/Prachay_Resume.pdf" class="btn" download>⬇️ Download Resume</a>
+  </section>
 
   <section id="contact" class="section">
     <h2>📬 Contact</h2>
@@ -126,6 +162,11 @@
     <p>☁️ Built by Khatu Prachay | Powered by passion for AWS ☁️</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-bar');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f0f8ff;
+  color: #1f2937;
+  font-size: 18px; /* Increased base font size */
+}
+
+header {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: 1.5rem;
+}
+
+.nav-bar {
+  background: #1f2937;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-bar a {
+  color: #fff;
+  margin: 12px 25px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: #38bdf8;
+}
+
+.section {
+  padding: 70px 25px;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeSlide 0.8s ease-in-out both;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #0f172a;
+  text-align: center;
+}
+
+.section p,
+.section ul {
+  font-size: 1.2rem;
+}
+
+.skills span {
+  background: #e0f2fe;
+  color: #0369a1;
+  margin: 6px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeSlide 0.7s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #0c4a6e;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+.card ul {
+  list-style: disc;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #0ea5e9;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+
+.btn:hover {
+  background: #0369a1;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #1e293b;
+  color: white;
+  font-size: 1rem;
+  margin-top: 60px;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+  }
+
+  .nav-bar a {
+    margin: 10px;
+    font-size: 1.2rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  .skills span {
+    font-size: 1rem;
+  }
+}
